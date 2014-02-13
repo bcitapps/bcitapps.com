@@ -48,5 +48,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 1.4.0)
+  jekyll (~> 1.4.3)
   redcarpet
