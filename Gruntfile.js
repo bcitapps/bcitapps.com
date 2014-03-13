@@ -12,6 +12,8 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
+  // Load imagemin (fix weird "not a jpeg" error)
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.initConfig({
     // Configurable paths
@@ -236,7 +238,8 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/js/**/*.js',
-        'test/spec/**/*.js'
+        'test/spec/**/*.js',
+        '!app/js/*.js'
       ]
     },
     csslint: {
@@ -246,7 +249,10 @@ module.exports = function (grunt) {
       check: {
         src: [
           '<%= yeoman.app %>/css/**/*.css',
-          '<%= yeoman.app %>//**/*.scss'
+          '<%= yeoman.app %>//**/*.scss',
+          '!app/css/*.css',
+          '!app/_site/**/*.*',
+          '!app/font-awesome/scss/*.*'
         ]
       }
     },
