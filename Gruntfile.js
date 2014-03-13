@@ -13,7 +13,7 @@ module.exports = function (grunt) {
   // Load all Grunt tasks
   require('load-grunt-tasks')(grunt);
   // Load imagemin (fix weird "not a jpeg" error)
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  // grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.initConfig({
     // Configurable paths
